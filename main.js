@@ -22,7 +22,9 @@ function loadProblem(i) {
     }
 
     const problem = problems[i];
-    document.getElementById('question').innerHTML = `<p>${problem.question}</p>`;
+    document.getElementById('question').innerHTML = `
+        <p><strong>Question:</strong> ${problem.question}</p>
+    `;
     const answerDisplay = document.getElementById('answer-display');
     answerDisplay.innerHTML = `
         <p><strong>Answer:</strong> ${problem.latexAnswer}</p>
@@ -34,9 +36,12 @@ function resetProblem() {
     incorrectCount = 0;
     hideAnswer();
 
-    document.getElementById('user-answer').value = "";
     const showAnswerBtn = document.getElementById('show-answer-btn');
     showAnswerBtn.style.display = 'none';
+    const nextBtn = document.getElementById('next-btn');
+    nextBtn.style.display = 'none';
+    
+    document.getElementById('user-answer').value = "";
 }
 
 function submitAnswer() {
@@ -74,7 +79,7 @@ function handleCorrectAnswer(){
     const showAnswerBtn = document.getElementById('show-answer-btn');
     showAnswerBtn.style.display = 'block';
     
-    const nextBtn = document.getElementById('next-button-display');
+    const nextBtn = document.getElementById('next-btn');
     nextBtn.style.display = 'block';
 }
 
@@ -92,25 +97,17 @@ function handleIncorrectAnswer() {
 }
 
 function showAnswer() {
-    const buttonsSection = document.getElementById('buttons');
-    buttonsSection.style.display = 'none';
+    const nextBtn = document.getElementById('next-btn');
+    nextBtn.style.display = 'block';
 
+    
     const answerDisplay = document.getElementById('answer-display');
     answerDisplay.style.display = 'block';
-    
-    const nextBtn = document.getElementById('next-button-display');
-    nextBtn.style.display = 'block';
 }
 
 function hideAnswer() {
-    const buttonsSection = document.getElementById('buttons');
-    buttonsSection.style.display = 'block';
-
     const answerDisplay = document.getElementById('answer-display');
     answerDisplay.style.display = 'none';
-
-    const nextBtn = document.getElementById('next-button-display');
-    nextBtn.style.display = 'none';
 }
 
 function nextProblem() {

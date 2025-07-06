@@ -1,7 +1,8 @@
 ## Short-term tasks
-  * [ ] Add basic CSS styling to the site
+  * [x] Add basic CSS styling to the site
   * [ ] Render LaTeX questions
   * [ ] Add functionality to render user input as LaTeX
+  * [ ] Add "Hide Answer" button to replace "Show Answer" when clicked
 
 ## Longer-term priorities
   * [ ] Use dependency (TBD which one) for converting LaTeX to numbers (for
