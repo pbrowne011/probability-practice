@@ -3,6 +3,16 @@ Probability practice problems
 A site for practicing probability problems stored in a JSON file.
 
 
+About
+---
+I set this up for myself to practice probability questions. I realized how
+out-of-practice I had become, and want a readily accessible method for
+practicing basic probability questions.
+
+Other solutions exist (MathAcademy, Khan Academy, others), but this fills my
+specific desire of textbook problems in a simple web interface.
+
+
 Development
 ---
 Because the site loads a local file, you need to spin up a development server to
