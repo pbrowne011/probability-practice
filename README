@@ -1,0 +1,16 @@
+Probability practice problems
+---
+A site for practicing probability problems stored in a JSON file.
+
+
+Development
+---
+Because the site loads a local file, you need to spin up a development server to
+avoid CORS requests failing. For more info, see Mozilla's page on the error:
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS/Errors/CORSRequestNotHttp
+
+An easy way to do this is with npm, if you already have it installed:
+
+$ npx http-server /path/to/project -o -p 8080
+
+IDEs and text editors also provide extensions that allow you to do this.
