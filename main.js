@@ -1,4 +1,4 @@
-// TOOD(pat) keep as globals?
+// TODO(pat) keep as globals?
 let problems = [];
 let currentProblem = 0;
 let incorrectCount = 0;
@@ -22,14 +22,21 @@ function loadProblem(i) {
     }
 
     const problem = problems[i];
-    document.getElementById('question').innerHTML = `
+    const question = document.getElementById('question');
+    question.innerHTML = `
         <p><strong>Question:</strong> ${problem.question}</p>
     `;
+    MathJax.typesetPromise([question]).then(() => {})
+        .catch((err) => console.log('MathJax error:', err));
+    
     const answerDisplay = document.getElementById('answer-display');
     answerDisplay.innerHTML = `
         <p><strong>Answer:</strong> ${problem.latexAnswer}</p>
         <p><strong>Explanation:</strong> ${problem.explanation}</p>
     `;
+    MathJax.typesetPromise([answerDisplay]).then(() => {})
+        .catch((err) => console.log('MathJax error:', err));
+
 }
 
 function resetProblem() {
@@ -144,6 +151,4 @@ document.addEventListener('DOMContentLoaded', function() {
             submitAnswer();
         }
     });
-
-    loadProblems();
 });
